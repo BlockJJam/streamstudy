@@ -156,3 +156,40 @@ public class Sorting {
     }
 }
 ```
+
+---
+
+### Stream 중간 연산 결과 확인
+
+- 설명
+    - peek()메서드
+      : 결과 스트림으로부터 요소를 소모하여, 추가로 명시된 동작을 수행한다
+      : 원본 스트림에서 요소를 소모하는 것이 아님으로, 주로) 연산과 연산사이에서 결과를 확인하고 싶은 경우에 많이 사용
+    - 개발자의 스트림 디버깅 요소라고 보면 된다
+- 예제
+
+```java
+public class Peeking {
+    public static void main(String[] args) {
+        IntStream stream = IntStream.of(7,5,5,2,1,2,3,5,4,6);
+
+        stream.peek(s -> System.out.println("원본 스트림: " +s))
+                .skip(2)
+                .peek(s-> System.out.println("skip(2) 실행 후: "+s))
+                .limit(5)
+                .peek(s-> System.out.println("limit(5) 실행 후: "+s))
+                .sorted()
+                .peek(s-> System.out.println("sorted() 실행 후: "+ s))
+                .forEach(n-> System.out.println(n));
+
+    }
+}
+```
+
+- 결과
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/adbb6422-db73-4af4-b753-6f28906eb443/Untitled.png)
+
+: 각 연산이 일어난 위치의 peek()연산의 출력 결과는 해당 스트림에 담긴 요소에 대한 값만 출력해준다는 것을 확인 가능
+
+---
