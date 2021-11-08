@@ -188,7 +188,7 @@ public class Peeking {
 
 - 결과
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/adbb6422-db73-4af4-b753-6f28906eb443/Untitled.png)
+![Untitled](https://user-images.githubusercontent.com/57485510/140701975-30bf4115-2143-448a-8b4a-18e6486d9430.png)
 
 : 각 연산이 일어난 위치의 peek()연산의 출력 결과는 해당 스트림에 담긴 요소에 대한 값만 출력해준다는 것을 확인 가능
 
